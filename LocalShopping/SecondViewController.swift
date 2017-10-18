@@ -15,6 +15,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -26,24 +27,5 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
-    
-}
-
-class StoresResults: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var stores = ["localstore", "bigstore", "littlestore"]
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(stores.count)
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = stores[indexPath.row]
-        
-        return(cell)
-    }
-    
-    
     
 }
