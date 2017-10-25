@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		5580CF76EC0332D36C4D9088 /* libPods-LocalShopping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BE597695F355449D82D5A7 /* libPods-LocalShopping.a */; };
 		930BCE8F1F578C08001DE925 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 930BCE8E1F578C08001DE925 /* GoogleService-Info.plist */; };
+		934DBEDA1F9DC8C900B96930 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DBED91F9DC8C900B96930 /* Master.swift */; };
 		93D62DFA1F90207F00969128 /* ItemsResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D62DF91F90207F00969128 /* ItemsResultsTableViewController.swift */; };
-		93D62DFC1F90209600969128 /* StoresResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D62DFB1F90209600969128 /* StoresResultsTableViewController.swift */; };
 		93EF17B91F550B10005E6594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EF17B81F550B10005E6594 /* AppDelegate.swift */; };
-		93EF17BB1F550B10005E6594 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EF17BA1F550B10005E6594 /* FirstViewController.swift */; };
-		93EF17BD1F550B10005E6594 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EF17BC1F550B10005E6594 /* SecondViewController.swift */; };
+		93EF17BB1F550B10005E6594 /* ItemsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EF17BA1F550B10005E6594 /* ItemsHomeViewController.swift */; };
 		93EF17C01F550B10005E6594 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EF17BE1F550B10005E6594 /* Main.storyboard */; };
 		93EF17C21F550B10005E6594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EF17C11F550B10005E6594 /* Assets.xcassets */; };
 		93EF17C51F550B10005E6594 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EF17C31F550B10005E6594 /* LaunchScreen.storyboard */; };
@@ -23,12 +22,11 @@
 		3955E83DE586879326E85E5D /* Pods-LocalShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocalShopping/Pods-LocalShopping.debug.xcconfig"; sourceTree = "<group>"; };
 		3A924AF0BCB5EEC6C697BA2A /* Pods-LocalShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocalShopping/Pods-LocalShopping.release.xcconfig"; sourceTree = "<group>"; };
 		930BCE8E1F578C08001DE925 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		934DBED91F9DC8C900B96930 /* Master.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		93D62DF91F90207F00969128 /* ItemsResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsResultsTableViewController.swift; sourceTree = "<group>"; };
-		93D62DFB1F90209600969128 /* StoresResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresResultsTableViewController.swift; sourceTree = "<group>"; };
 		93EF17B51F550B10005E6594 /* LocalShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EF17B81F550B10005E6594 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93EF17BA1F550B10005E6594 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		93EF17BC1F550B10005E6594 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		93EF17BA1F550B10005E6594 /* ItemsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsHomeViewController.swift; sourceTree = "<group>"; };
 		93EF17BF1F550B10005E6594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93EF17C11F550B10005E6594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93EF17C41F550B10005E6594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,15 +77,14 @@
 			isa = PBXGroup;
 			children = (
 				93EF17B81F550B10005E6594 /* AppDelegate.swift */,
-				93EF17BA1F550B10005E6594 /* FirstViewController.swift */,
+				93EF17BA1F550B10005E6594 /* ItemsHomeViewController.swift */,
 				93D62DF91F90207F00969128 /* ItemsResultsTableViewController.swift */,
-				93D62DFB1F90209600969128 /* StoresResultsTableViewController.swift */,
-				93EF17BC1F550B10005E6594 /* SecondViewController.swift */,
 				93EF17BE1F550B10005E6594 /* Main.storyboard */,
 				93EF17C11F550B10005E6594 /* Assets.xcassets */,
 				93EF17C31F550B10005E6594 /* LaunchScreen.storyboard */,
 				93EF17C61F550B10005E6594 /* Info.plist */,
 				930BCE8E1F578C08001DE925 /* GoogleService-Info.plist */,
+				934DBED91F9DC8C900B96930 /* Master.swift */,
 			);
 			path = LocalShopping;
 			sourceTree = "<group>";
@@ -228,10 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93EF17BD1F550B10005E6594 /* SecondViewController.swift in Sources */,
 				93EF17B91F550B10005E6594 /* AppDelegate.swift in Sources */,
-				93D62DFC1F90209600969128 /* StoresResultsTableViewController.swift in Sources */,
-				93EF17BB1F550B10005E6594 /* FirstViewController.swift in Sources */,
+				934DBEDA1F9DC8C900B96930 /* Master.swift in Sources */,
+				93EF17BB1F550B10005E6594 /* ItemsHomeViewController.swift in Sources */,
 				93D62DFA1F90207F00969128 /* ItemsResultsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

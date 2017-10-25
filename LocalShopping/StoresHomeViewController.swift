@@ -8,10 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITextFieldDelegate {
+class StoresHomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var searchBar: UITextField!
-    var searchQuery: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +20,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         searchQuery = textField.text
+        textField.resignFirstResponder()
         
-        performSegue(withIdentifier: "ItemsSearch", sender: self)
+        performSegue(withIdentifier: "StoresSearch", sender: self)
         
         return true
     }
-
+    
 }

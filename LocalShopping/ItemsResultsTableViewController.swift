@@ -10,27 +10,21 @@ import UIKit
 
 class ItemsResultsTableViewController: UITableViewController {
 
-    public struct Item {
-        let name: String
-        let price: Double
-    }
+    @IBOutlet var searchBar: UISearchBar!
     
-    var items: [Item] = []
-    
+    var itemsInView: [Item] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.text = searchQuery!
         
-        let theChronic = Item(name: "Dr Dre - The Chronic", price: 30.00)
-        let toPimpAButterfly = Item(name: "Kendrick Lamar - To Pimp A Butterfly", price: 10.00)
-        items = [theChronic, toPimpAButterfly]
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        for i in allItems {
+            if (i.name.lowercased().range(of: searchQuery!.lowercased()) != nil || searchQuery!.lowercased().range(of: i.name.lowercased()) != nil) {
+                itemsInView.append(i)
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +41,7 @@ class ItemsResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return itemsInView.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,56 +49,15 @@ class ItemsResultsTableViewController: UITableViewController {
 
         // Configure the cell...
 
-        let item = items[indexPath.row]
+        let item = itemsInView[indexPath.row]
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = String(item.price)
         
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    @IBAction func selectedItem() {
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
