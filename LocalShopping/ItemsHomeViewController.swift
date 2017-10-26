@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ItemsHomeViewController: UIViewController, UITextFieldDelegate {
     
+    let itemsReference = Database.database().reference(withPath: "items")
     @IBOutlet var searchBar: UITextField!
     
     override func viewDidLoad() {
@@ -63,14 +65,20 @@ class ItemsHomeViewController: UIViewController, UITextFieldDelegate {
                 self.addStore(storeName: userInput[2], containingItem: userInput[0])
             }
             
-            allItems.append(Item(name: userInput[0], price: Double!((userInput[1] as NSString).doubleValue), storeNames: [userInput[2]]))
+            if let priceInteger = Int(userInput[1]) {
+                let priceNSNumber = NSNumber(value: priceInteger)
+                
+                let itemRef = self.itemsReference.child(userInput[0].lowercased())
+                let values: [String: Any] = ["name": userInput[0].lowercased(), "price": priceNSNumber, "store-names": [userInput[2]]]
+                itemRef.setValue(values)
+            }
             
         }))
         present(addItem, animated: true)
     }
     
     func userDidNotFillInFields(previousInputs: [String]) {
-        let userDidNotFillFields = UIAlertController(title: "Did not Fill in all Fields", message: "You did not fill in all fields, please try again", preferredStyle: .alert)
+        let userDidNotFillFields = UIAlertController(title: "Missing Fields", message: "You did not fill in all fields, please try again", preferredStyle: .alert)
         userDidNotFillFields.addAction(UIAlertAction(title: "OK", style: .cancel))
     }
     
