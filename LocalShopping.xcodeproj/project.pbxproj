@@ -81,8 +81,8 @@
 				93D62DF91F90207F00969128 /* ItemsResultsTableViewController.swift */,
 				93EF17BE1F550B10005E6594 /* Main.storyboard */,
 				93EF17C11F550B10005E6594 /* Assets.xcassets */,
-				93EF17C31F550B10005E6594 /* LaunchScreen.storyboard */,
 				93EF17C61F550B10005E6594 /* Info.plist */,
+				93EF17C31F550B10005E6594 /* LaunchScreen.storyboard */,
 				930BCE8E1F578C08001DE925 /* GoogleService-Info.plist */,
 				934DBED91F9DC8C900B96930 /* Master.swift */,
 			);
@@ -132,6 +132,7 @@
 				TargetAttributes = {
 					93EF17B41F550B10005E6594 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = X2AG9EX4XA;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -366,7 +367,9 @@
 			baseConfigurationReference = 3955E83DE586879326E85E5D /* Pods-LocalShopping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X2AG9EX4XA;
 				INFOPLIST_FILE = LocalShopping/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.HilalAlSameraaii.LocalShopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -380,7 +383,9 @@
 			baseConfigurationReference = 3A924AF0BCB5EEC6C697BA2A /* Pods-LocalShopping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X2AG9EX4XA;
 				INFOPLIST_FILE = LocalShopping/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.HilalAlSameraaii.LocalShopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
