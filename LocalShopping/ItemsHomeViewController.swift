@@ -14,6 +14,7 @@ class ItemsHomeViewController: UIViewController, UITextFieldDelegate {
     //Declaring the search bar on the home screen as a variable
     @IBOutlet var searchBar: UITextField!
     
+    //The following code executes if the user presses return on the text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchQuery = textField.text
         performSegue(withIdentifier: "Search", sender: self)
@@ -46,7 +47,7 @@ class ItemsHomeViewController: UIViewController, UITextFieldDelegate {
             if let priceInteger = Int(userInput[1]) {
                 let priceNSNumber = NSNumber(value: priceInteger)
                 
-                let itemRef = self.itemsReference.child(userInput[0].lowercased())
+                let itemRef = itemsReference.child(userInput[0].lowercased())
                 let values: [String: Any] = ["name": userInput[0], "price": priceNSNumber, "store-name": userInput[2]]
                 itemRef.setValue(values)
             }
